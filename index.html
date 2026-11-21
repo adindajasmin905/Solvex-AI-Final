@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chatbot AI berbasis API menggunakan HTML, CSS, dan JavaScript.">
+  <title>Solvex AI — AI Assistant</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="app">
+    <main class="main">
+      <header class="topbar">
+        <div class="brand"><span>Solvex AI</span></div>
+        <div class="topbar-actions">
+          <button class="new-chat" id="newChat">＋ <span>Chat Baru</span></button>
+        </div>
+      </header>
+
+      <section class="conversation" id="conversation">
+        <div class="welcome" id="welcome">
+          <h1>Ada yang bisa<br> saya bantu?</h1>
+          <p class="welcome-sub">Tanyakan apa saja. Saya siap membantu kamu mencari ide, belajar, dan menyelesaikan pekerjaan.</p>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <div class="composer">
+          <textarea id="promptInput" rows="1" placeholder="Ketik pesan kamu di sini..." aria-label="Pesan"></textarea>
+          <div class="composer-bottom">
+            <span class="hint">Enter untuk mengirim · Shift + Enter untuk baris baru</span>
+            <button class="send-btn" id="sendBtn" aria-label="Kirim pesan">↑</button>
+          </div>
+        </div>
+        <p class="disclaimer">AI dapat membuat kesalahan. Periksa kembali informasi penting.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
