@@ -1,24 +1,40 @@
+
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/",
-      "destination": "/index.html"
+      "src": "api/chat.js",
+      "use": "@vercel/node"
     },
     {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
+      "src": "api/config.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
     }
   ],
-  "functions": {
-    "api/chat.js": {
-      "memory": 1024,
-      "maxDuration": 60
+  "routes": [
+    {
+      "src": "/api/chat",
+      "dest": "/api/chat.js"
     },
-    "api/config.js": {
-      "memory": 1024,
-      "maxDuration": 10
+    {
+      "src": "/api/config",
+      "dest": "/api/config.js"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  }
+  ]
 }
